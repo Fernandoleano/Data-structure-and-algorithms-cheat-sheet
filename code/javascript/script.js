@@ -136,6 +136,20 @@ class LinkedList {
         this.size++;
     }
 
+    // finding the index
+    find(index) {
+        let current = this.head;
+        let count = 0;
+        while(current) {
+            if (count == index) {
+                console.log(current.data);
+            }
+            count++;
+            current = current.next;
+        }
+        return null;
+    }
+
     // Removing index
     remove(index) {
         if(index > 0 && index > this.size) {
@@ -185,6 +199,10 @@ linkedList.prepend(300);
 linkedList.append(400);
 
 linkedList.remove(1);
+
+linkedList.find(3);
+linkedList.find(2);
+linkedList.find(1);
 
 // Un comment this if you need to clear the whole list
 // linkedList.clear();
