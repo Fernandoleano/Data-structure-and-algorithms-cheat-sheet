@@ -1,3 +1,10 @@
+/*
+    author: Fernando Leano
+    Every Data structure and algorithms is here!
+    a linked list is  A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations. The elements in a linked list are linked using pointers url to learn more
+    A linked list is time consuming and will take time and it's kinda hard to learn.
+*/
+
 // Doing linked list
 console.log("Linked list:")
 
@@ -18,9 +25,22 @@ console.log("Linked list:")
 //     }
 // console.log(list);
 
+
+// Using node
+// This is the first class
+class Node {
+    constructor(data, next = null) {
+        this.data = data;
+        this.next = next;
+    }
+}
+
 // Using linked list
+// This is the second class
 class LinkedList {
-    constructor(head = null) {    
+    // You can call head null hear
+    constructor(head = null) {
+        // Or you can just say this.head = null
         this.head = head;    
         this.tail = null;    
         this.size = 0;  
@@ -77,9 +97,11 @@ class LinkedList {
     }
 
     // Clear list
-    // clear() {
-    //     this.head = null;
-    // }
+    // This will clear the whole list
+    clear() {
+        this.head = null;
+        this.size = 0;
+    }
 
     // Insert at index
     insertAt(data, index) {
@@ -114,6 +136,31 @@ class LinkedList {
         this.size++;
     }
 
+    // Removing index
+    remove(index) {
+        if(index > 0 && index > this.size) {
+            return;
+        }
+
+        let current = this.head;
+        let previous;
+        let count = 0;
+
+        // Remove first
+        if (index === 0) {
+            this.head = current.next;
+        } else {
+            while(count < index) {
+                count++;
+                previous = current.next;
+                current = current.next;
+            }
+            previous.next = current.next;
+        }
+        // We will decrement this
+        this.size--;
+    }
+
     // Print list data
     printData() {
         let current = this.head;
@@ -129,15 +176,6 @@ class LinkedList {
     // }
 }
 
-
-// Using node
-class Node {
-    constructor(data, next = null) {
-        this.data = data;
-        this.next = next;
-    }
-}
-
 const linkedList = new LinkedList();
 
 linkedList.prepend(100);
@@ -145,6 +183,11 @@ linkedList.prepend(200);
 linkedList.prepend(300);
 
 linkedList.append(400);
+
+linkedList.remove(1);
+
+// Un comment this if you need to clear the whole list
+// linkedList.clear();
 
 // linkedList.insertAt(500, 2);
 
