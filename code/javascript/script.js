@@ -215,4 +215,61 @@ linkedList.printData();
 
 console.log(linkedList);
 
-console.log("-------------------------------------------")
+console.log("-------------------------------------------");
+
+console.log("Double linked list:");
+
+// This.size in double linked list is optional
+
+// Node
+class Node1 {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+      this.prev = null;
+    }
+  }
+  
+  class DoubleLinked {
+    constructor() {
+      this.head = null;
+      this.tail = null;
+      this.size = 0;
+    }
+  
+    // inserting the index
+    push(value) {
+      const node = new Node1(value);
+  
+      if (!this.head) {
+        this.head = node;
+        this.tail = node;
+      } else {
+        this.tail.next = node;
+        node.prev = this.tail;
+        this.tail = node;
+      }
+      this.size++;
+      return this;
+    }
+  
+    print() {
+      let doubleLinkedListString = this.head ? this.head.value || '' : '';
+      let currentNode = this.head && this.head.next;
+      while (currentNode) {
+        doubleLinkedListString += ` ---> ${currentNode.value}`;
+        currentNode = currentNode.next;
+      }
+      console.log(doubleLinkedListString);
+    }
+  }
+  
+  const doublelinked = new DoubleLinked();
+  
+  doublelinked.push(4).push(3).push(2).push(1).push("a").push("b").push("c").push("d").push("F").push("e").push("r").push("n").push("a").push("d").push("o");
+  doublelinked.print();
+  
+  console.log(doublelinked);
+  
+  // console.log(JSON.stringify(doublelinked));
+  
