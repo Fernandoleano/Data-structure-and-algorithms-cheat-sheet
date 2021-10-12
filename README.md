@@ -12,3 +12,5 @@ url to learn more: https://www.geeksforgeeks.org/data-structures/linked-list/
 
 Define Double linked list: A Doubly Linked List (DLL) contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list.
 url to learn more: https://www.geeksforgeeks.org/doubly-linked-list/
+
+![image](https://user-images.githubusercontent.com/68082556/136871340-4a8293da-e8a7-405b-b74d-f10762cfc5af.png)
