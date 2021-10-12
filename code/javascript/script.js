@@ -3,6 +3,8 @@
     Every Data structure and algorithms is here!
     a linked list is  A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations. The elements in a linked list are linked using pointers url to learn more
     A linked list is time consuming and will take time and it's kinda hard to learn.
+    
+    A double linked list is A Doubly Linked List (DLL) contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list. url to learn more
 */
 
 // Doing linked list
